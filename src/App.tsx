@@ -1,21 +1,31 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { Outlet } from 'react-router-dom';
+import { Header } from './components/Header';
+import { Footer } from './components/Footer';
+import { GlobalContext } from './GlobalContext';
 import './App.scss';
-
-interface Props {
-  onClick: () => void;
-  children: React.ReactNode;
-}
-
-export const Provider: React.FC<Props> = React.memo(({ onClick, children }) => (
-  <button type="button" onClick={onClick}>
-    {children}
-  </button>
-));
+import { Menu } from './components/Menu';
 
 export const App: React.FC = () => {
+  const { isBurgerMenu } = useContext(GlobalContext);
+
   return (
-    <div className="starter">
-      <Provider onClick={() => ({})}>TodoList</Provider>
+    <div className="app">
+      <Header />
+
+      {isBurgerMenu && <Menu />}
+
+      {!isBurgerMenu && (
+        <>
+          <div className="main-content">
+            <div className="main-content__container">
+              <Outlet />
+            </div>
+          </div>
+
+          <Footer />
+        </>
+      )}
     </div>
   );
 };
