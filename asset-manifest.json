@@ -1,0 +1,35 @@
+{
+  "files": {
+    "main.css": "./static/css/main.3357f066.css",
+    "main.js": "./static/js/main.849bb757.js",
+    "static/media/Mont-Regular.otf": "./static/media/Mont-Regular.1d26d89f7339866d3133.otf",
+    "static/media/Mont-SemiBold.otf": "./static/media/Mont-SemiBold.8979d71a3146ca1d761f.otf",
+    "static/media/Mont-Bold.otf": "./static/media/Mont-Bold.03c8c2f6127c1da0fc39.otf",
+    "static/media/shopping-cart-icon.svg": "./static/media/shopping-cart-icon.9d5d0d409501d818f0d1.svg",
+    "static/media/favorites-icon.svg": "./static/media/favorites-icon.a95dd00fc9518e89bb3c.svg",
+    "static/media/home_icon.svg": "./static/media/home_icon.d36275efcf1bb603e44b.svg",
+    "static/media/arrow-top.svg": "./static/media/arrow-top.e0402709fd8c0ac818a7.svg",
+    "static/media/logo.svg": "./static/media/logo.c94176926904d965da98.svg",
+    "static/media/favorites-icon-heart.svg": "./static/media/favorites-icon-heart.0704fe19df4651c0d25d.svg",
+    "static/media/search-icon.svg": "./static/media/search-icon.775eb3991362002694f2.svg",
+    "static/media/cross-black-icon.svg": "./static/media/cross-black-icon.d45040db9854b65beebe.svg",
+    "static/media/burger-menu-icon.svg": "./static/media/burger-menu-icon.5206f3e2de87deb0a6c7.svg",
+    "static/media/Union.svg": "./static/media/Union.63c5036d613810521e10.svg",
+    "static/media/arrow-down.svg": "./static/media/arrow-down.5beda9be0303ba495045.svg",
+    "static/media/arrow-right-disabled.svg": "./static/media/arrow-right-disabled.21c91d86bad57fef27fd.svg",
+    "index.html": "./index.html",
+    "static/media/arrow-left-disabled.svg": "./static/media/arrow-left-disabled.754356e851d334714f3f.svg",
+    "static/media/plus-icon.svg": "./static/media/plus-icon.5a5c998338fb9f754083.svg",
+    "static/media/arrow-icon.svg": "./static/media/arrow-icon.cd0d2be9a138c65c3226.svg",
+    "static/media/arrow-right.svg": "./static/media/arrow-right.4756c06469be134ab092.svg",
+    "static/media/arrow-left.svg": "./static/media/arrow-left.c0d01b22c02136a3c700.svg",
+    "static/media/minus-icon.svg": "./static/media/minus-icon.d40559547c358943a83b.svg",
+    "static/media/minus-icon-disabled.svg": "./static/media/minus-icon-disabled.4cc7bb03ee262905ca96.svg",
+    "main.3357f066.css.map": "./static/css/main.3357f066.css.map",
+    "main.849bb757.js.map": "./static/js/main.849bb757.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3357f066.css",
+    "static/js/main.849bb757.js"
+  ]
+}
