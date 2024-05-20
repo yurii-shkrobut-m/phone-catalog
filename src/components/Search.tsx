@@ -12,17 +12,14 @@ import '../styles/Search.scss';
 
 export const Search: React.FC = () => {
   const { pathname } = useLocation();
-  const [searchParams, setSearchParams] = useSearchParams();
-
-  console.log(searchParams.toString());
-
   const [inputQuery, setInputQuery] = useState('');
+  const [searchParams, setSearchParams] = useSearchParams();
 
   const appliedQuery = useCallback(
     debounce((newQuery: string) => {
       setSearchParams(getSearchWith(searchParams, { query: newQuery }));
     }, 1000),
-    [pathname],
+    [searchParams],
   );
 
   const handleQueryDelete = () => {
