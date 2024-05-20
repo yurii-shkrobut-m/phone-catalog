@@ -5,7 +5,7 @@ Developed simple e-commerce React based application using React, HashRouter and 
 - [DEMO LINK](https://yurii-shkrobut-m.github.io/phone-catalog/)
 
 ## Mockup
-- [DESIGN](https://www.figma.com/file/T5ttF21UnT6RRmCQQaZc6L/Phone-catalog-(V2)-Original?type=design&node-id=0-1&mode=design&t=H89mxEv3akkMU4Qh-0)
+- [DESIGN](https://www.figma.com/design/uEetgWenSRxk9jgiym6Yzp/Phone-catalog-redesign?node-id=0-1&t=mCwtZj7otvl43L2F-0)
 
 ## Feature:
   - Product pagination
