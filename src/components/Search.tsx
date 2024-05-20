@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable import/no-extraneous-dependencies */
 /* eslint-disable jsx-a11y/control-has-associated-label */
@@ -12,9 +13,10 @@ import '../styles/Search.scss';
 export const Search: React.FC = () => {
   const { pathname } = useLocation();
   const [searchParams, setSearchParams] = useSearchParams();
-  const [inputQuery, setInputQuery] = useState('');
 
-  // const query = searchParams.get('query') || '';
+  console.log(searchParams.toString());
+
+  const [inputQuery, setInputQuery] = useState('');
 
   const appliedQuery = useCallback(
     debounce((newQuery: string) => {

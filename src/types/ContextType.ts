@@ -18,6 +18,7 @@ export interface ContextType {
   removeCartList: (item: CartItemType) => void;
   increaseCartQuantity: (id: string) => void;
   decreaseCartQuantity: (id: string) => void;
+  checkTotal: () => number[];
   isLoading: boolean;
   isBurgerMenu: boolean;
 }

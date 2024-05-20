@@ -11,16 +11,9 @@ import '../styles/CartPage.scss';
 import '../App.scss';
 
 export const CartPage: React.FC = () => {
-  const { cartList } = useContext(GlobalContext);
+  const { cartList, checkTotal } = useContext(GlobalContext);
   const [isCheckoutMessage, setIsCheckoutMessage] = useState(false);
-
-  let total = 0;
-  let totalItems = 0;
-
-  cartList.forEach(cart => {
-    total += cart.quantity * cart.product.price;
-    totalItems += cart.quantity;
-  });
+  const [totalItems, total] = checkTotal();
 
   function getCheckoutMessage() {
     setIsCheckoutMessage(true);

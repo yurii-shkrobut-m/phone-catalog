@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 /* eslint-disable @typescript-eslint/no-unused-expressions */
 import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
@@ -12,15 +13,16 @@ export const GlobalContext = React.createContext<ContextType>({
   phones: [],
   tablets: [],
   accessories: [],
-  setProducts: () => {},
-  setIsLoading: () => {},
-  setIsBurgerMenu: () => {},
+  setProducts: () => { },
+  setIsLoading: () => { },
+  setIsBurgerMenu: () => { },
   getNewPathname: () => '',
-  addRemoveFavList: () => {},
-  addRemoveCartList: () => {},
-  removeCartList: () => {},
-  increaseCartQuantity: () => {},
-  decreaseCartQuantity: () => {},
+  addRemoveFavList: () => { },
+  addRemoveCartList: () => { },
+  removeCartList: () => { },
+  increaseCartQuantity: () => { },
+  decreaseCartQuantity: () => { },
+  checkTotal: () => [],
   favList: [],
   cartList: [],
   isLoading: false,
@@ -43,6 +45,18 @@ export const GlobalProvider: React.FC<Props> = ({ children }) => {
   const phones = products.filter(item => item.category === 'phones');
   const tablets = products.filter(item => item.category === 'tablets');
   const accessories = products.filter(item => item.category === 'accessories');
+
+  function checkTotal() {
+    let total = 0;
+    let totalItems = 0;
+
+    cartList.forEach(cart => {
+      total += cart.quantity * cart.product.price;
+      totalItems += cart.quantity;
+    });
+
+    return [totalItems, total];
+  }
 
   function addRemoveFavList(product: Product): void {
     favList.find(fav => fav.id === product.id)
@@ -111,6 +125,7 @@ export const GlobalProvider: React.FC<Props> = ({ children }) => {
     removeCartList,
     increaseCartQuantity,
     decreaseCartQuantity,
+    checkTotal,
     favList,
     cartList,
     isLoading,

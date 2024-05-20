@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import React, { useContext } from 'react';
 import cn from 'classnames';
 import { NavLink } from 'react-router-dom';
@@ -7,13 +8,16 @@ import { Counter } from './Counter';
 import { GlobalContext } from '../GlobalContext';
 
 export const FavCart: React.FC = () => {
-  const { favList, cartList, setIsBurgerMenu } = useContext(GlobalContext);
+  const { favList, cartList, setIsBurgerMenu, checkTotal } =
+    useContext(GlobalContext);
 
   const getFavLinkClass = ({ isActive }: { isActive: boolean }) =>
     cn('fav-cart__fav-link', { 'fav-cart__fav-link--active': isActive });
 
   const getCartLinkClass = ({ isActive }: { isActive: boolean }) =>
     cn('fav-cart__cart-link', { 'fav-cart__cart-link--active': isActive });
+
+  const [totalItems] = checkTotal();
 
   return (
     <div className="fav-cart">
@@ -33,7 +37,7 @@ export const FavCart: React.FC = () => {
           className={getCartLinkClass}
           onClick={() => setIsBurgerMenu(false)}
         >
-          {!!cartList.length && <Counter quantity={cartList.length} />}
+          {!!cartList.length && <Counter quantity={totalItems} />}
         </NavLink>
       </div>
     </div>

@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 export type SearchParams = {
   [key: string]: string | string[] | null;
 };
@@ -25,6 +26,8 @@ export function getSearchWith(
   // - array of strings adds several params with the same key;
 
   Object.entries(paramsToUpdate).forEach(([key, value]) => {
+    console.log([key, value]);
+
     if (value === null || value === '') {
       newParams.delete(key);
     } else if (Array.isArray(value)) {
@@ -38,6 +41,8 @@ export function getSearchWith(
       newParams.set(key, value);
     }
   });
+
+  // console.log(newParams.toString());
 
   // we return a string to use it inside links
   return newParams.toString();
