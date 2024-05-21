@@ -12,9 +12,10 @@ import { GlobalContext } from '../GlobalContext';
 export const Header: React.FC = () => {
   const { productId } = useParams();
   const { pathname } = useLocation();
-  const { isBurgerMenu, setIsBurgerMenu } = useContext(GlobalContext);
+  const { isBurgerMenu, setIsBurgerMenu, favList } = useContext(GlobalContext);
 
   const isHomeOrIsCart = pathname === '/cart' || pathname === '/';
+  const isFavList = pathname === '/cart' || pathname === '/';
   const isSearch = !isHomeOrIsCart && !productId;
 
   const switchBurgerButton = (isBurger: boolean) => {

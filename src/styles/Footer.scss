@@ -83,6 +83,7 @@
   &__back-top {
     display: flex;
     align-items: center;
+    // visibility: hidden;
 
     &--text {
       margin-right: 16px;
@@ -91,11 +92,15 @@
 
     &--link {
       display: block;
-      width: 16px;
-      height: 16px;
+      width: 32px;
+      height: 32px;
       padding: 8px;
       background: url('../icons/arrow-icon.svg') no-repeat center;
       border: 1px solid $gray-icons-color;
+    }
+
+    &--hidden {
+      visibility: hidden;
     }
   }
 }

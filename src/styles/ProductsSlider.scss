@@ -2,8 +2,7 @@
 @import "../utils/mixins.scss";
 
 $card-gap: 16px;
-$card-width: 272px;
-
+$card-width: 277px;
 
 .ProductsSlider {
   width: 100%;
@@ -20,9 +19,11 @@ $card-width: 272px;
   }
 
   &__content {
+    display: flex;
+    align-items: center;
     width: $card-width * 4 + $card-gap * 3;
     overflow: hidden;
-    height: 100%;
+    padding: 15px 10px;
 
     @include onTablet {
       width: $card-width * 3 + $card-gap * 2;

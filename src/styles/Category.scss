@@ -65,7 +65,7 @@
     height: 100%;
     object-fit: cover;
     object-position: left;
-    transition: transform .3s;
+    transition: transform $transition-duration;
 
     @include onMobile {
       object-position: top;
