@@ -14,9 +14,10 @@ export const Header: React.FC = () => {
   const { pathname } = useLocation();
   const { isBurgerMenu, setIsBurgerMenu, favList } = useContext(GlobalContext);
 
-  const isHomeOrIsCart = pathname === '/cart' || pathname === '/';
-  const isFavList = pathname === '/cart' || pathname === '/';
-  const isSearch = !isHomeOrIsCart && !productId;
+  const isPhones = pathname === '/phones' && !productId;
+  const isTabOrAcc = pathname === '/tablets' || pathname === '/accessories';
+  const isFavList = pathname === '/favorites' && !!favList.length;
+  const isSearch = isPhones || isTabOrAcc || isFavList;
 
   const switchBurgerButton = (isBurger: boolean) => {
     // eslint-disable-next-line @typescript-eslint/no-unused-expressions

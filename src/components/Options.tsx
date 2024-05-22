@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import React, { useContext } from 'react';
 
 import { Link } from 'react-router-dom';
@@ -6,6 +7,7 @@ import { ProductDetails } from '../types/ProductDetails';
 import { ButtonsCartFav } from './ButtonsCartFav';
 import { Params } from './Params';
 import { GlobalContext } from '../GlobalContext';
+import colorNameToHex from '../helpers/getHexColor';
 
 import '../styles/Options.scss';
 
@@ -46,7 +48,7 @@ export const Options: React.FC<Props> = ({ product }) => {
               <Link
                 to={`../${getNewPathname(col, -1)}`}
                 className="options__colors-link"
-                style={{ backgroundColor: col }}
+                style={{ backgroundColor: colorNameToHex(col) }}
               />
             </li>
           ))}

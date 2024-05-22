@@ -38,6 +38,7 @@
     width: 100%;
     height: 368px;
     overflow: hidden;
+    border-radius: 10px;
 
     @include onTablet {
       height: 272px;

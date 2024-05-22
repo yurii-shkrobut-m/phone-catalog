@@ -73,59 +73,66 @@ export const ProductDetailsPage: React.FC = () => {
 
       <BackButton />
 
-      <div className="product-details-page__content">
-        <div className="product-details-page__content-top">
-          <h2 className="product-details-page__title"> {name} </h2>
+      {isLoading ? (
+        <Loader />
+      ) : (
+        <div className="product-details-page__content">
+          <div className="product-details-page__content-top">
+            <h2 className="product-details-page__title"> {name} </h2>
 
-          <div className="product-details-page__gallery-selected">
-            <img
-              src={API_URL + selectedImage}
-              className="product-details-page__gallery-image"
-              alt="phone"
-            />
+            <div className="product-details-page__gallery-selected">
+              <img
+                src={API_URL + selectedImage}
+                className="product-details-page__gallery-image"
+                alt="phone"
+              />
+            </div>
+
+            <ul className="product-details-page__gallery-list">
+              {images.map(image => (
+                <li key={image}>
+                  <button
+                    type="button"
+                    className={cn('product-details-page__gallery-button', {
+                      'product-details-page__gallery-button--active':
+                        image === selectedImage,
+                    })}
+                    onClick={() => setSelectedImage(image)}
+                  >
+                    <img
+                      src={API_URL + image}
+                      className="product-details-page__gallery-image"
+                      alt="phone"
+                    />
+                  </button>
+                </li>
+              ))}
+            </ul>
+
+            <section className="product-details-page__options">
+              <Options product={product} />
+            </section>
           </div>
 
-          <ul className="product-details-page__gallery-list">
-            {images.map(image => (
-              <li key={image}>
-                <button
-                  type="button"
-                  className={cn('product-details-page__gallery-button', {
-                    'product-details-page__gallery-button--active':
-                      image === selectedImage,
-                  })}
-                  onClick={() => setSelectedImage(image)}
-                >
-                  <img
-                    src={API_URL + image}
-                    className="product-details-page__gallery-image"
-                    alt="phone"
-                  />
-                </button>
-              </li>
-            ))}
-          </ul>
+          <div className="product-details-page__content-button">
+            <section
+              className="product-details-page__about"
+              data-cy="productDescription"
+            >
+              <About description={description} />
+            </section>
 
-          <section className="product-details-page__options">
-            <Options product={product} />
-          </section>
+            <section className="product-details-page__tech-specs">
+              <TechSpecs product={product} />
+            </section>
+          </div>
+
+          <ProductsSlider
+            products={shuffledProducts}
+            title={randomSliderTitle}
+          />
         </div>
-
-        <div className="product-details-page__content-button">
-          <section
-            className="product-details-page__about"
-            data-cy="productDescription"
-          >
-            <About description={description} />
-          </section>
-
-          <section className="product-details-page__tech-specs">
-            <TechSpecs product={product} />
-          </section>
-        </div>
-
-        <ProductsSlider products={shuffledProducts} title={randomSliderTitle} />
-      </div>
+      )}
     </main>
   );
 };
